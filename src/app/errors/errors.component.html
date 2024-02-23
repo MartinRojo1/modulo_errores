@@ -1,0 +1,22 @@
+<div *ngIf=getErrors()">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre del error</th>
+          <th>Fecha</th>
+          <th>Fuente</th>
+          <th>Excepción</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let index of indexes">
+          <td>{{ responseData.data.nombre_del_error[index] }}</td>
+          <td>{{ responseData.data.date[index] }}</td>
+          <td>{{ responseData.data.source[index] }}</td>
+          <td>{{ responseData.data.excepcion[index] }}</td>
+          <td>{{ responseData.data.estado[index] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
