@@ -8,16 +8,21 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './errors.component.html',
-  styleUrl: './errors.component.scss'
+  styleUrls: ['./errors.component.scss']
 })
 
 export class ErrorsComponent implements OnInit {
-  pepe:any = {};
-  constructor(private service:ErrorsService){
-  }
+  pepe: any[] = []; // Declarar pepe como un array
+  pepe1: any[] = []; 
+  
+  constructor(private service: ErrorsService) {}
 
-  ngOnInit():void{
-    this.service.getErrors().subscribe(a => console.log(a))
+  ngOnInit(): void {
+    this.service.getErrors().subscribe(result => {
+      // Convertir el objeto result.data.date a un array y asignarlo a pepe
+      this.pepe = Object.values(result.data.nombre_del_error);
+      this.pepe1= Object.values(result.data.date);
+    });
   }
 }
 

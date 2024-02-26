@@ -8,12 +8,13 @@ import { ErrorsComponent } from './errors/errors.component';
 
 @NgModule({
   declarations: [
-            
+    
   ],
 
   imports: [
     BrowserModule,
-    HttpClientModule // Importa HttpClientModule si estás usando HttpClient en tu servicio
+    HttpClientModule,
+     // Importa HttpClientModule si estás usando HttpClient en tu servicio
     // Otros módulos importados
   ],
   providers: [
@@ -22,4 +23,5 @@ import { ErrorsComponent } from './errors/errors.component';
   ]
 })
 export class AppModule { }
+
 
